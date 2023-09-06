@@ -44,7 +44,7 @@ spec:
       volumes:
       - name: octoprint
         hostPath:
-          path: /home/kzorluoglu/charts/octoprint/data/  # Replace with the host directory path
+          path: {{ .Values.hostPath.data }}  # Replace with the host directory path
           type: DirectoryOrCreate
       - name: ttyacm0
         hostPath:
@@ -54,5 +54,5 @@ spec:
           path: /dev/video0
       - name: octoprint-config
         hostPath:
-          path: /home/kzorluoglu/charts/octoprint/config.yaml
+          path: {{ .Values.hostPath.config }}
           type: File
