@@ -1,0 +1,82 @@
+api:
+  key: F28954C20F1A4C20BAAAC5E18518B5DA
+plugins:
+  announcements:
+    _config_version: 1
+    channels:
+      _blog:
+        read_until: 1687176300
+      _important:
+        read_until: 1521111600
+      _octopi:
+        read_until: 1684929600
+      _plugins:
+        read_until: 1688428800
+      _releases:
+        read_until: 1687852800
+  bedlevelvisualizer:
+    _config_version: 1
+  classicwebcam:
+    _config_version: 1
+    stream: http://localhost:8080/?action=stream
+  dashboard:
+    _config_version: 2
+    _webcamArray:
+    - disableNonce: false
+      flipH: null
+      flipV: null
+      name: Default
+      rotate: null
+      streamRatio: '16:9'
+      url: null
+    clearOn_Feedrate: '2'
+    clearOn_Filament: '2'
+    clearOn_LayerGraph: '1'
+    clearOn_PrintThumbnail: '2'
+    clearOn_PrinterMessage: '2'
+    commandWidgetArray:
+    - command: echo "47.6" | bc
+      enabled: false
+      icon: command-icon.png
+      interval: '60'
+      name: Simulated Chamber
+      type: 3/4
+  discovery:
+    upnpUuid: 8560b06d-02af-44b2-be94-1ad53b003703
+  errortracking:
+    unique_id: e8dee71d-c42c-48f1-8d34-4721ada8261c
+  gcodeviewer:
+    _config_version: 1
+  octolapse:
+    _config_version: 3
+  softwareupdate:
+    _config_version: 9
+  tracking:
+    enabled: true
+    unique_id: 5a1659cd-50d9-44a6-ad72-e0c65de97756
+  uicustomizer:
+    themeVersion: 0.2.9.8
+  virtual_printer:
+    _config_version: 1
+printerProfiles:
+  default: _default
+server:
+  firstRun: true
+  onlineCheck:
+    enabled: true
+  pluginBlacklist:
+    enabled: true
+  secretKey: J012LucKfHszlp8G4WRDQhDHkeWYe5VY
+temperature:
+  profiles:
+  - bed: 100
+    chamber: null
+    extruder: 210
+    name: ABS
+  - bed: 60
+    chamber: null
+    extruder: 180
+    name: PLA
+webcam:
+  ffmpeg: /usr/bin/ffmpeg
+  watermark: false

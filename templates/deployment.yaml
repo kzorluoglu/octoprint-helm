@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-deployment
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+          env:
+            - name: ENABLE_MJPG_STREAMER
+              value: 'false'
+          securityContext:
+            privileged: true
+          resources:
+            requests:
+              memory: 2000Mi
+              cpu: 1000m
+            limits:
+              memory: 3500Mi
+              cpu: 2000m
+          volumeMounts:
+            - mountPath: /octoprint
+              name: octoprint
+              readOnly: false
+            - mountPath: /dev/ttyACM0
+              name: ttyacm0
+              readOnly: false
+            - mountPath: /dev/video0
+              name: video0
+              readOnly: false
+            - mountPath: /octoprint/octoprint/config.yaml
+              name: octoprint-config
+      volumes:
+      - name: octoprint
+        hostPath:
+          path: /home/kzorluoglu/charts/octoprint/data/  # Replace with the host directory path
+          type: DirectoryOrCreate
+      - name: ttyacm0
+        hostPath:
+          path: /dev/ttyACM0
+      - name: video0
+        hostPath:
+          path: /dev/video0
+      - name: octoprint-config
+        hostPath:
+          path: /home/kzorluoglu/charts/octoprint/config.yaml
+          type: File
