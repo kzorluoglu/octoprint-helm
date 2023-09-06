@@ -8,6 +8,9 @@ service:
   port: 5000
 
 hostname: octopi.kserver
+hostPath:
+  data: /home/kzorluoglu/charts/octoprint/data/
+  config: /home/kzorluoglu/charts/octoprint/config.yaml
 
 persistence:
   enabled: true
