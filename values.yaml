@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: octoprint/octoprint
+  tag: latest
+
+service:
+  port: 5000
+
+hostname: 'octopi.server' # example for local working octopi.server
+hostPath:
+  data: '/home/user/data'  # example /home/user/data/
+  config: '/home/user/octopi/config.yaml' # example /home/user/octoprint-helm/config.yaml
+
+persistence:
+  enabled: true
+  existingClaim: "" # If you have an existing PVC, provide the name here
+  storageClassName: "standard" # StorageClass to use for PVC provisioning
+  accessMode: "ReadWriteOnce"
+  size: "5Gi"
+

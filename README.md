@@ -1,6 +1,6 @@
-# Project Name
+# OctoPrint with Helm on Kubernetes
 
-This repository contains Helm chart configurations for deploying [Your Project]. The `setup.sh` script allows you to easily configure and deploy the chart.
+This repository contains Helm chart configurations for deploying OctoPrint project. The `setup.sh` script allows you to easily configure and deploy the chart.
 
 ## Table of Contents
 
