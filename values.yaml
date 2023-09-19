@@ -7,10 +7,10 @@ image:
 service:
   port: 5000
 
-hostname: '###hostname###' # example for local working octopi.server
+hostname: 'test' # example for local working octopi.server
 hostPath:
-  data: '###dataPath###'  # example /home/user/data/
-  config: '###configPath###' # example /home/user/octoprint-helm/config.yaml
+  data: 'test'  # example /home/user/data/
+  config: 'test' # example /home/user/octoprint-helm/config.yaml
 
 persistence:
   enabled: true
